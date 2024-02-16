@@ -13,13 +13,15 @@ return require('packer').startup(function(use)
   requires = { {'nvim-lua/plenary.nvim'} }
 }
 
-  use ({
-	'tanvirtin/monokai.nvim',
-	as = 'monokai',
-	config = function()
-		vim.cmd('colorscheme monokai')
-	end
-	})
+  use (
+	{
+		'Mofiqul/dracula.nvim',
+		as = 'dracula',
+		config = function()
+			vim.cmd('colorscheme dracula')
+		end
+	}
+  )
 
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
@@ -27,7 +29,7 @@ return require('packer').startup(function(use)
 	  'VonHeikemen/lsp-zero.nvim',
   	branch = 'v3.x',
 	  requires = {
-	    --- Uncomment these if you want to manage LSP servers from neovim
+	    --- Uncomment these if you want to manage LSP servers from neovim	
 	   {'williamboman/mason.nvim'},
  	   {'williamboman/mason-lspconfig.nvim'},
 
@@ -36,9 +38,8 @@ return require('packer').startup(function(use)
   	  {'hrsh7th/cmp-nvim-lsp'},
   	  {'L3MON4D3/LuaSnip'},
   },
-    "williamboman/mason.nvim",
 }
 
-use {"neovim/nvim-lspconfig",}
+use {'neovim/nvim-lspconfig'}
 
 end)
